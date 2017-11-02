@@ -14,12 +14,12 @@ const Card =  ({ name, founded, seats, titles, coatOfArms, ancestralWeapons, wor
   return (
     <div className='card'>
       <h2 className='name'>{name}</h2>
-      <h3 className='founded'>Founded: {founded}</h3>
+      <h3 className='founded'>Founded: {founded} </h3>
       <h3 className='seats'>Seats: {createListsSeats}</h3>
       <h3 className='titles'>Title: {createListsTitles}</h3>
       <h3 className='coat'>Coat of Arms: {coatOfArms}</h3>
       <h3 className='weapons'>Ancestral Weapons: {createListsWeapons}</h3>
-      <h3 className='words'>Words: {words}</h3>
+      <h3 className='words'>{words}</h3>
     </div>
   );
 };
