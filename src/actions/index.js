@@ -18,17 +18,28 @@ export const grabSwornMembers = swornMembers => ({
   swornMembers
 });
 
-// export const fetchSwornMembers = () => (dispatch) {
-//   return (
-//     fetch('http://localhost:3001/api/v1/character', {
-//       method: 'POST',
-//       body: JSON.stringify,
-//       headers: {
-//         'Content-type': 'application/json'
-//
-//       .then(res => res.json())
-//       .then(swornMembers => dispatch(grabSwornMembers(swornMembers)))
-//       .catch(error => console.log(error))
-//     )}
-//   )}
-// )}
+export const fetchSwornMembers = (swornMembers) => {
+  return dispatch => {
+
+    const promises =swornMembers.map(member => {
+      const body = JSON.stringify({member});
+
+
+      return fetch('http://localhost:3001/api/v1/character', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: body
+
+      })
+
+        .then(response => response.json())
+    })
+
+    const allPromises = Promise.all(promises);
+
+    allPromises.then( array => {
+      dispatch(grabSwornMembers(array))
+    })
+
+  }
+}
