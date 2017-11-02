@@ -21,8 +21,8 @@ export const grabSwornMembers = swornMembers => ({
 export const fetchSwornMembers = (swornMembers) => {
   return dispatch => {
 
-    const promises =swornMembers.map(member => {
-      const body = JSON.stringify({url: member});
+    const promises = swornMembers.map(member => {
+      const body = JSON.stringify({member});
 
 
       return fetch('http://localhost:3001/api/v1/character', {
@@ -37,8 +37,8 @@ export const fetchSwornMembers = (swornMembers) => {
 
     const allPromises = Promise.all(promises);
 
-    allPromises.then( array => {
-      dispatch(grabSwornMembers(array));
+    allPromises.then( member => {
+      dispatch(grabSwornMembers(member));
     });
   };
 };

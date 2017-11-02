@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Card from '../Card/Card.js';
 import './CardCtnr.css';
-import { grabSwornMembers } from '../../actions/index'
+import { fetchSwornMembers } from '../../actions/index';
 
 const CardCtnr =  props => {
-
-  console.log(props);
-
 
   return (
     <div className='card-ctnr'>
@@ -24,15 +21,10 @@ const CardCtnr =  props => {
             ancestralWeapons={house.ancestralWeapons}
             words={house.words}
           />;
-
         })
       }
     </div>
   );
-
-  // const
-//Things to display: name, founded, seats, titles, coatOfArms, ancestralWeapons, words
-
 };
 
 CardCtnr.propTypes = {
@@ -44,9 +36,10 @@ const mapStateToProps = store => ({
   houses: store.houses,
   swornMembers: store.swornMembers
 });
+
 const mapDispatchToProps = dispatch => ({
   grabSwornMembers: (swornMembers) => {
-    dispatch(grabSwornMembers(swornMembers))
+    dispatch(fetchSwornMembers(swornMembers))
   }
 
 });
