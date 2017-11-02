@@ -9,9 +9,9 @@ const Card =  ({ name, founded, seats }) => {
 
   return (
     <div className='card'>
-      <h2>{name}</h2>
-      <h2>{founded}</h2>
-      <h2>{seats}</h2>
+      <h2 className='name'>{name}</h2>
+      <h3 className='founded'>{founded}</h3>
+      <h3 className='seats'>{seats}</h3>
 
       {/* <h2>{founded}</h2> */}
 

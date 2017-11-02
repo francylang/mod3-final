@@ -5,6 +5,7 @@ import Card from '../Card/Card.js';
 
 const CardCtnr =  props => {
 
+
   return (
     <div>
       {
@@ -13,6 +14,7 @@ const CardCtnr =  props => {
             key={house.name}
             name={house.name}
             founded={house.founded}
+            seats={house.seats.map(seat => seat)}
           />;
 
         })
