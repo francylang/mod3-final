@@ -1,27 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import './Card.css';
 
-const Card =  props => {
+const Card =  ({ name, founded, seats }) => {
 
-  const houseName = props.houses.map(house => house.name);
-
+  // const
+//Things to display: name, founded, seats, titles, coatOfArms, ancestralWeapons, words
 
   return (
-    <div>
-      <h3>{houseName}</h3>
+    <div className='card'>
+      <h2>{name}</h2>
+      <h2>{founded}</h2>
+      <h2>{seats}</h2>
+
+      {/* <h2>{founded}</h2> */}
+
     </div>
-  )
-}
+  );
+};
+
+export default Card;
 
 Card.propTypes = {
 
 }
-
-
-const mapStateToProps = store => ({
-  houses: store.houses
-});
-const mapDispatchToProps = dispatch => ({
-});
-export default connect(mapStateToProps, undefined)(Card);
