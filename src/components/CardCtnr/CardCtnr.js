@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Card from '../Card/Card.js';
-import './CardCtnr.css'
+import './CardCtnr.css';
+import { grabSwornMembers } from '../../actions/index'
 
 const CardCtnr =  props => {
 
@@ -40,8 +41,13 @@ CardCtnr.propTypes = {
 
 
 const mapStateToProps = store => ({
-  houses: store.houses
+  houses: store.houses,
+  swornMembers: store.swornMembers
 });
 const mapDispatchToProps = dispatch => ({
+  grabSwornMembers: (swornMembers) => {
+    dispatch(grabSwornMembers(swornMembers))
+  }
+
 });
-export default connect(mapStateToProps, undefined)(CardCtnr);
+export default connect(mapStateToProps, mapDispatchToProps)(CardCtnr);

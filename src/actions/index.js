@@ -22,7 +22,7 @@ export const fetchSwornMembers = (swornMembers) => {
   return dispatch => {
 
     const promises =swornMembers.map(member => {
-      const body = JSON.stringify({member});
+      const body = JSON.stringify({url: member});
 
 
       return fetch('http://localhost:3001/api/v1/character', {
@@ -32,14 +32,13 @@ export const fetchSwornMembers = (swornMembers) => {
 
       })
 
-        .then(response => response.json())
-    })
+        .then(response => response.json());
+    });
 
     const allPromises = Promise.all(promises);
 
     allPromises.then( array => {
-      dispatch(grabSwornMembers(array))
-    })
-
-  }
-}
+      dispatch(grabSwornMembers(array));
+    });
+  };
+};
