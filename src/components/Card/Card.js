@@ -4,27 +4,20 @@ import './Card.css';
 
 const Card =  ({ name, founded, seats, titles, coatOfArms, ancestralWeapons, words }) => {
 
-  // const seatsMapped = house.seats.maps(seat => {
-  //   return (
-  //     <p className="seats-map">{seat}</p>
-  //   );
-  // });
-  //
-  // const titlesMapped = house.titles.maps(title => {
-  //   return (
-  //     <p className="seats-map">{title}</p>
-  //   );
-  // });
+  const createListsTitles = titles.map( title => <p key={title}>{title}</p> )
+  const createListsSeats = seats.map( seat => <p key={seat}>{seat}</p> )
+  const createListsWeapons = ancestralWeapons.map( weapon => <p key={weapon}>{weapon}</p> )
+
 
   return (
     <div className='card'>
       <h2 className='name'>{name}</h2>
       <h3 className='founded'>Founded: {founded}</h3>
-      <h3 className='seats'>Seats: {seats}</h3>
-      <h3 className='titles'>Titles: {titles}</h3>
-      <h3 className='titles'>Coat of Arms: {coatOfArms}</h3>
-      <h3 className='titles'>Ancestral Weapons: {ancestralWeapons}</h3>
-      <h3 className='titles'>Words: {words}</h3>
+      <h3 className='seats'>Seats: {createListsSeats}</h3>
+      <h3 className='titles'>Title: {createListsTitles}</h3>
+      <h3 className='coat'>Coat of Arms: {coatOfArms}</h3>
+      <h3 className='weapons'>Ancestral Weapons: {createListsWeapons}</h3>
+      <h3 className='words'>Words: {words}</h3>
     </div>
   );
 };
