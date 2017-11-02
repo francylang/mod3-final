@@ -7,6 +7,7 @@ import { fetchHouseData, grabHouseData } from '../../actions';
 class App extends Component {
 
   componentDidMount() {
+    console.log(this.props);
     this.props.fetchHouseData();
   }
 
@@ -18,7 +19,7 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
           <button onClick={() => {
             // this.props.fakeAction();
-            alert(this.props.fake);
+            // alert(this.props.fake);
           }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
@@ -29,7 +30,6 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fake: shape({ fake: string }),
 };
 
 const mapStateToProps = store => ({
