@@ -3,16 +3,12 @@ export const fakeAction = () => ({type: 'FAKE'});
 
 export const fetchHouseData = () => {
   return dispatch => {
-  houseDataFetcher()
-    .then(res => res.json())
-    .then(resJSON => resJSON.results)
-    .then(moviesArray => MovieDataCleaner(moviesArray))
-    .then(movies => dispatch(fetchDataSuccess(movies)))
-    .catch(() => dispatch(fetchDataError(true)));
+    houseDataFetcher()
+      .then(res => res.json())
+      .then(resJSON => resJSON.results)
+      .catch(error => console.log(error));
   };
 };
-  }
-}
 
 
 const houseDataFetcher = () => {
