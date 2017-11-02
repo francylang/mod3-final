@@ -2,16 +2,20 @@ export const fakeAction = () => ({type: 'FAKE'});
 
 
 export const fetchHouseData = () => {
-  return dispatch => {
+  return (
     houseDataFetcher()
       .then(res => res.json())
-      .then(resJSON => resJSON.results)
-      .catch(error => console.log(error));
-  };
+      .then(resJSON => dispatch(grabHouseData(houses)))
+      .catch(error => console.log(error))
+  )
 };
-
 
 const houseDataFetcher = () => {
   return fetch(`http://localhost:3001/api/v1/houses
 `);
 };
+
+export const grabHouseData = houses => ({
+  type: 'GRAB_HOUSE_DATA',
+  houses
+});
