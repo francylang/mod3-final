@@ -9,6 +9,13 @@ import CardCtnr from '../CardCtnr/CardCtnr';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state =  {
+      isloading: false
+    }
+  }
+
 
   componentDidMount() {
     this.props.fetchHouseData();

@@ -5,7 +5,8 @@ import Card from '../Card/Card.js';
 import './CardCtnr.css'
 
 const CardCtnr =  props => {
-  //Things to display: name, founded, seats, titles, coatOfArms, ancestralWeapons, words
+
+  console.log(props);
 
 
   return (
