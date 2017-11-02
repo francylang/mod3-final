@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
 
+
+
 const Card =  ({ name, founded, seats, titles, coatOfArms, ancestralWeapons, words }) => {
 
-  const createListsTitles = titles.map( title => <p key={title}>{title}</p> )
-  const createListsSeats = seats.map( seat => <p key={seat}>{seat}</p> )
-  const createListsWeapons = ancestralWeapons.map( weapon => <p key={weapon}>{weapon}</p> )
+  const createListsTitles = titles.map( title => <p key={title}>{title}</p> );
+  const createListsSeats = seats.map( seat => <p key={seat}>{seat}</p> );
+  const createListsWeapons = ancestralWeapons.map( weapon => <p key={weapon}>{weapon}</p> );
 
 
   return (

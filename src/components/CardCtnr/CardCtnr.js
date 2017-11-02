@@ -29,7 +29,8 @@ const CardCtnr =  props => {
 
 CardCtnr.propTypes = {
   houses: PropTypes.array
-}
+
+};
 
 
 const mapStateToProps = store => ({
@@ -39,7 +40,7 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
   grabSwornMembers: (swornMembers) => {
-    dispatch(fetchSwornMembers(swornMembers))
+    dispatch(fetchSwornMembers(swornMembers));
   }
 
 });

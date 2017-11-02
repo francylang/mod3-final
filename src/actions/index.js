@@ -18,24 +18,21 @@ export const grabSwornMembers = swornMembers => ({
   swornMembers
 });
 
-export const fetchSwornMembers = (swornMembers) => {
+export const fetchSwornMembers = swornMembers => {
   return dispatch => {
-
-    const promises = swornMembers.map(member => {
+    const thesePromises = swornMembers.map(member => {
       const body = JSON.stringify({member});
-
 
       return fetch('http://localhost:3001/api/v1/character', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: body
-
       })
 
         .then(response => response.json());
     });
 
-    const allPromises = Promise.all(promises);
+    const allPromises = Promise.all(thesePromises);
 
     allPromises.then( member => {
       dispatch(grabSwornMembers(member));

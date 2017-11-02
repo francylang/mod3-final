@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
@@ -13,7 +13,7 @@ class App extends Component {
     super();
     this.state =  {
       isloading: false
-    }
+    };
   }
 
 
@@ -52,14 +52,14 @@ const mapDispatchToProps = dispatch => ({
 
   grabHouseData: houses => {
     dispatch(grabHouseData(houses));
-  },
+  }
 
   // fetchSwornMembers: () => {
   //   dispatch(fetchSwornMembers());
   // },
   //
   // grabSwornMembers: swornMembers => {
-  //   dispatch(grabSwornMembers());
+  //   dispatch(grabSwornMembers(swornMembers));
   // }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
