@@ -4,14 +4,13 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { fetchHouseData, grabHouseData } from '../../actions';
-import { houseReducer } from '../../reducers/houseReducer'
-import CardCtnr from '../CardCtnr/CardCtnr'
+// import { houseReducer } from '../../reducers/houseReducer'
+import CardCtnr from '../CardCtnr/CardCtnr';
 
 
 class App extends Component {
 
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchHouseData();
   }
 
@@ -32,6 +31,7 @@ class App extends Component {
 }
 
 App.propTypes = {
+  fetchHouseData: PropTypes.func
 };
 
 const mapStateToProps = store => ({
