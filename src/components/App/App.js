@@ -5,7 +5,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchHouseData, grabHouseData } from '../../actions';
 import { houseReducer } from '../../reducers/houseReducer'
-import Card from '../Card/Card'
+import CardCtnr from '../CardCtnr/CardCtnr'
 
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
           <button onClick={() => {}}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
-          <Card />
+          <CardCtnr />
         </div>
       </div>
     );

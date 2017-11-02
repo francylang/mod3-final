@@ -1,0 +1,15 @@
+.card {
+  border: 2px solid red;
+}
+
+.name {
+  border: 2px solid green;
+}
+
+.founded {
+  border: 2px solid blue;
+
+}
+.seats {
+  border: 2px solid purple;
+}
