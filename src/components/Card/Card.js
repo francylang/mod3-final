@@ -4,6 +4,17 @@ import './Card.css';
 
 const Card =  ({ name, founded, seats, titles, coatOfArms, ancestralWeapons, words }) => {
 
+  // const seatsMapped = house.seats.maps(seat => {
+  //   return (
+  //     <p className="seats-map">{seat}</p>
+  //   );
+  // });
+  //
+  // const titlesMapped = house.titles.maps(title => {
+  //   return (
+  //     <p className="seats-map">{title}</p>
+  //   );
+  // });
 
   return (
     <div className='card'>
@@ -21,5 +32,11 @@ const Card =  ({ name, founded, seats, titles, coatOfArms, ancestralWeapons, wor
 export default Card;
 
 Card.propTypes = {
-
-}
+  name: PropTypes.string,
+  founded: PropTypes.string,
+  seats: PropTypes.array,
+  titles: PropTypes.array,
+  coatOfArms: PropTypes.string,
+  ancestralWeapons: PropTypes.array,
+  words: PropTypes.string
+};

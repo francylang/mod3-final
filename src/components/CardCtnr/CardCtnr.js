@@ -28,14 +28,13 @@ const CardCtnr =  props => {
     </div>
   );
 
-
   // const
 //Things to display: name, founded, seats, titles, coatOfArms, ancestralWeapons, words
 
 };
 
 CardCtnr.propTypes = {
-
+  houses: PropTypes.array
 }
 
 
