@@ -8,6 +8,7 @@
   width: 100%;
   z-index: -1;
   animation: snow 15s linear infinite;
+  font-family: sans-serif;
 }
 
 .App-logo {

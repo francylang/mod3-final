@@ -1,18 +1,33 @@
 .card {
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  text-wrap: wrap;
+  width: 20%;
+  opacity: 0.5;
+  align-items: center;
+  text-align: center;
+  /*width: 130px;*/
+  /*position: relative;*/
+  display: flex;
+  /*justify-content: center;*/
+  flex-direction: column;
+  margin: 10px;
+  margin-bottom: 40px;
+  padding: 54px;
+  box-shadow: 2px 4px 12px #888888;
+  border-radius: 1%;
+  cursor: pointer;
 }
 
 .name {
-  border: 2px solid green;
+  /*border: 2px solid green;*/
 }
 
 .founded {
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
 
 }
 .seats {
-  border: 2px solid purple;
+  /*border: 2px solid purple;*/
 }

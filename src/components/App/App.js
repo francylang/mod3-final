@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
-import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fetchHouseData, grabHouseData } from '../../actions';
+import { grabSwornMembers, fetchSwornMembers, fetchHouseData, grabHouseData } from '../../actions';
 // import { houseReducer } from '../../reducers/houseReducer'
 import CardCtnr from '../CardCtnr/CardCtnr';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state =  {
+      isloading: false
+    };
+  }
+
 
   componentDidMount() {
     this.props.fetchHouseData();
+    // this.props.fetchSwornMembers();
   }
 
   render() {
@@ -20,7 +28,6 @@ class App extends Component {
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
-          <button onClick={() => {}}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
           <CardCtnr />
@@ -46,5 +53,13 @@ const mapDispatchToProps = dispatch => ({
   grabHouseData: houses => {
     dispatch(grabHouseData(houses));
   }
+
+  // fetchSwornMembers: () => {
+  //   dispatch(fetchSwornMembers());
+  // },
+  //
+  // grabSwornMembers: swornMembers => {
+  //   dispatch(grabSwornMembers(swornMembers));
+  // }
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
